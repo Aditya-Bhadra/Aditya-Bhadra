@@ -1,0 +1,119 @@
+import java.util.*;
+
+public class ConsoleCalculator {
+    public static void main(String[] args)
+    throws java.io.IOException {
+     for(;;){
+        Scanner ChoiceSelect = new Scanner(System.in);
+        int choice;
+         do{
+             System.out.println("Welcome to console calculator, please select a operation by entering the corresponding number.");
+             System.out.println(" PRESS 1 FOR ADDITION");
+             System.out.println(" PRESS 2 FOR SUBTRACTION");
+             System.out.println(" PRESS 3 FOR MULTIPLACATION");
+             System.out.println(" PRESS 4 FOR DIVISION");
+             System.out.println(" PRESS 5 FOR FACTORIALS");
+             System.out.println(" TYPE 100 TO QUIT");
+             choice = ChoiceSelect.nextInt();
+         }while(choice < 1 | choice > 7 & choice != 100);
+                if(choice == 100){
+                    break;
+                };
+           switch(choice){
+ 
+              case 1:
+              //addition code
+              double numberAddedToArray;
+              double numNums;
+              double sum = 0;
+                  System.out.println("How many numbers would you like to add?");
+                  numNums = ChoiceSelect.nextInt();
+                  double[] summedNumbers ={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+                  for(int a = 0; a < numNums; a++){
+                      System.out.println("Please input one of your numbers. ");
+                      
+                      numberAddedToArray = ChoiceSelect.nextDouble();
+                      summedNumbers[a] = numberAddedToArray;
+
+                  }
+                  for(int b = 0; b < summedNumbers.length; b++){
+                      sum = sum + summedNumbers[b];
+                  }
+                  System.out.println("The sum is: " + sum);
+            
+              break;
+              case 2:
+              double numberAddedToArray1;
+              double numNums1;
+             
+                  System.out.println("How many numbers would you like to subtract?");
+                  numNums1 = ChoiceSelect.nextInt();
+                  double[] summedNumbers1 ={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+                  for(int a = 0; a < numNums1; a++){
+                      System.out.println("Please input one of your numbers. ");
+                      
+                      numberAddedToArray = ChoiceSelect.nextDouble();
+                      summedNumbers1[a] = numberAddedToArray;
+                     
+
+                  }
+                  double results = 0;
+                  for(int b = 0; b < summedNumbers1.length; b++){
+                      
+                    if(b == 0){  
+                         results = summedNumbers1[b];
+                    } else {
+                        results = results - summedNumbers1[b];
+                    }
+
+                  }
+                  System.out.println("The difference is: " + results);
+                   break;
+             case 3:
+               double num1,num2;
+
+               System.out.println("Input first number");
+               num1 = ChoiceSelect.nextDouble();
+               System.out.println("Input next number");
+               num2 = ChoiceSelect.nextDouble();
+               double result100;
+               result100 = num1 * num2;
+               System.out.println("The product of " + num1 + " and " + num2 + " is " + result100 );
+             break;
+             case 4:
+             double num3,num4;
+
+               System.out.println("Input first number");
+               num3 = ChoiceSelect.nextDouble();
+               System.out.println("Input next number");
+               num4 = ChoiceSelect.nextDouble();
+               double result101;
+               result101 = num3 / num4;
+               System.out.println("The quotient of " + num3 + " and " + num4 + " is " + result101 );
+
+
+
+             break;
+             case 5:
+             int Number;
+             int Result = 1;
+             int i = 1;
+             //code
+             System.out.println("Put your number in below to get the factorial of the number. It has to be a positive Integer except for 0.");
+             Number = ChoiceSelect.nextInt();
+              Result = Number;
+             for( ; i <= Number - 1; i++ ){
+                 
+                 Result = Result * (Number - i);
+                 
+             }
+             System.out.println("The Factorial of " + Number + " is " + Result);
+
+             break;
+
+           }
+
+
+     }
+    }
+}
